@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: io.kimmking.springboot01.Springboot01ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.173 s <<< FAILURE! - in io.kimmking.springboot01.Springboot01ApplicationTests
+initializationError(io.kimmking.springboot01.Springboot01ApplicationTests)  Time elapsed: 0.015 s  <<< ERROR!
+java.lang.Exception: The class io.kimmking.springboot01.Springboot01ApplicationTests is not public.
+
+initializationError(io.kimmking.springboot01.Springboot01ApplicationTests)  Time elapsed: 0 s  <<< ERROR!
+java.lang.Exception: Test class should have exactly one public constructor
+
+initializationError(io.kimmking.springboot01.Springboot01ApplicationTests)  Time elapsed: 0 s  <<< ERROR!
+java.lang.Exception: Method contextLoads() should be public
+
