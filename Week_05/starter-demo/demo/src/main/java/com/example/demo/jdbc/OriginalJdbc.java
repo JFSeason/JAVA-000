@@ -1,9 +1,14 @@
 package com.example.demo.jdbc;
 
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.sql.*;
 
@@ -14,16 +19,20 @@ import java.sql.*;
 @Component
 public class OriginalJdbc {
 
-    @Autowired
+    @Resource
     DataSource dataSource;
 
     public void jdbcTask() throws ClassNotFoundException, SQLException {
+        /*   原生JDBC
         Class.forName("com.mysql.jdbc.Driver");//加载驱动
 
         String jdbc = "jdbc:mysql://localhost:3306/mydb?useUnicode=true&characterEncoding=utf8";
         Connection conn = DriverManager.getConnection(jdbc, "root", "123456");
-
-//        Connection conn = dataSource.getConnection();
+        */
+        /**
+         *  使用Hikari 连接池
+         */
+        Connection conn = dataSource.getConnection();
         originalExcute(conn);
 
         startPreparedStatement(conn);
