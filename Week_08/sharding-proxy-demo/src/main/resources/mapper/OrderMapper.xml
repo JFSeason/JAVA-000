@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.OrderMapper">
+
+    <select id="getOrder" resultType="java.util.HashMap">
+        select order_id,user_id from t_order limit 100
+    </select>
+
+
+    <insert id="save" parameterType="com.example.demo.entity.OrderEntity">
+        insert into `t_order` (user_id) values (#{order.user_id})
+    </insert>
+
+</mapper>
